@@ -3,12 +3,44 @@
 
 @mixin shadow {
     box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.04),
-                4px 4px 4px rgba(0, 0, 0, 0.56);
+                4px 4px 4px rgba(0, 0, 0, 0.56),
+                0 0 0 rgba(255, 255, 255, 0.04) inset,
+                0 0 0 rgba(0, 0, 0, 0.56) inset;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+@mixin in-shadow {
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.04),
+                0 0 0 rgba(0, 0, 0, 0.56),
+                -4px -4px 4px rgba(255, 255, 255, 0.04) inset,
+                4px 4px 4px rgba(0, 0, 0, 0.56) inset;
     border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 @mixin card {
     @include shadow;
+}
+
+@mixin incard {
+    @include in-shadow;
+}
+
+@mixin button {
+    @include layout.rounded(8px);
+
+    display: inline-block;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.84);
+
+    font-weight: 600;
+    font-family: "Helvetica", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    transition: box-shadow 0.08s ease-in-out;
+    transition: border 0.16s ease-in-out;
+
+    cursor: pointer;
 }
 
 .card {
