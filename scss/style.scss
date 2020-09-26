@@ -17,10 +17,10 @@ nav {
     margin: 16px;
 
     &.primary {
-        @include card.button(#64dd17);
+        @include card.button(#64dd17, 0.12);
     }
 
     &.secondary {
-        @include card.button(#ff4081);
+        @include card.button(#ff4081, 0.12);
     }
 }
