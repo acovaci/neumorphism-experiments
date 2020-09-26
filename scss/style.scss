@@ -3,7 +3,7 @@
 @use "card";
 
 nav {
-    @include card.card;
+    @include card.shadow;
     position: fixed;
     top: 0;
     left: 0;
@@ -12,24 +12,15 @@ nav {
 }
 
 .btn {
-    @include card.card;
     @include card.button;
 
     margin: 16px;
 
-    &:hover {
-        border: solid 1px rgba(255, 255, 255, 0.56);
+    &.primary {
+        @include card.button(#64dd17);
     }
 
-    &.hover {
-        border: solid 1px rgba(255, 255, 255, 0.56);
-    }
-
-    &:active {
-        @include card.incard;
-    }
-
-    &.active {
-        @include card.incard;
+    &.secondary {
+        @include card.button(#ff4081);
     }
 }
