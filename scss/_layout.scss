@@ -13,18 +13,17 @@ $_radius: 10px;
 html {
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 body {
     @include colors.background;
 
     margin: 0;
-    padding: 64px 0 0 0;
+    padding: 0;
 }
 
 main {
-    max-width: 960px;
+    max-width: 640px;
     margin: auto;
     padding: 16px;
 }

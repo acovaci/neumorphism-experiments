@@ -5,25 +5,214 @@
 html {
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
 body {
   background: linear-gradient(150deg, #333, #111);
   margin: 0;
-  padding: 64px 0 0 0;
+  padding: 0;
 }
 
 main {
-  max-width: 960px;
+  max-width: 640px;
   margin: auto;
   padding: 16px;
 }
 
-.card {
+.plaq {
   border-radius: 10px;
-  box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.08), 4px 4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 255, 255, 0.08) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
+}
+.plaq:nth-child(1) {
+  box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.08), 4px 4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 255, 255, 0.08) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
   border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.plaq:nth-child(2) {
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.08), 0 0 0 rgba(0, 0, 0, 0.56), -4px -4px 4px rgba(255, 255, 255, 0.08) inset, 4px 4px 4px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.plaq:nth-child(3) {
+  box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.08), -4px -4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 255, 255, 0.08) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.plaq:nth-child(4) {
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.08), 0 0 0 rgba(0, 0, 0, 0.56), 4px 4px 4px rgba(255, 255, 255, 0.08) inset, -4px -4px 4px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.plaq:nth-child(5) {
+  box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.08), -2px -2px 2px rgba(0, 0, 0, 0.56), 2px 2px 2px rgba(255, 255, 255, 0.08) inset, -2px -2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.plaq:nth-child(6) {
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.08), 2px 2px 2px rgba(0, 0, 0, 0.56), 2px 2px 2px rgba(255, 255, 255, 0.08) inset, -2px -2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 0 solid rgba(0, 0, 0, 0);
+}
+.plaq:nth-child(7) {
+  box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.08), -2px -2px 2px rgba(0, 0, 0, 0.56), -2px -2px 2px rgba(255, 255, 255, 0.08) inset, 2px 2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 0 solid rgba(0, 0, 0, 0);
+}
+.plaq:nth-child(8) {
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.08), 2px 2px 2px rgba(0, 0, 0, 0.56), -2px -2px 2px rgba(255, 255, 255, 0.08) inset, 2px 2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.plaq:nth-child(13) {
+  box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.08), 4px 4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 255, 255, 0.08) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(150deg, #333, #111);
+}
+.plaq:nth-child(14) {
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.08), 0 0 0 rgba(0, 0, 0, 0.56), -4px -4px 4px rgba(255, 255, 255, 0.08) inset, 4px 4px 4px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(150deg, #333, #111);
+}
+.plaq:nth-child(15) {
+  box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.08), -4px -4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 255, 255, 0.08) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(150deg, #333, #111);
+}
+.plaq:nth-child(16) {
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.08), 0 0 0 rgba(0, 0, 0, 0.56), 4px 4px 4px rgba(255, 255, 255, 0.08) inset, -4px -4px 4px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(150deg, #333, #111);
+}
+.plaq:nth-child(17) {
+  box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.08), -2px -2px 2px rgba(0, 0, 0, 0.56), 2px 2px 2px rgba(255, 255, 255, 0.08) inset, -2px -2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(150deg, #333, #111);
+}
+.plaq:nth-child(18) {
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.08), 2px 2px 2px rgba(0, 0, 0, 0.56), 2px 2px 2px rgba(255, 255, 255, 0.08) inset, -2px -2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 0 solid rgba(0, 0, 0, 0);
+  background: linear-gradient(150deg, #333, #111);
+}
+.plaq:nth-child(19) {
+  box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.08), -2px -2px 2px rgba(0, 0, 0, 0.56), -2px -2px 2px rgba(255, 255, 255, 0.08) inset, 2px 2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 0 solid rgba(0, 0, 0, 0);
+  background: linear-gradient(150deg, #333, #111);
+}
+.plaq:nth-child(20) {
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.08), 2px 2px 2px rgba(0, 0, 0, 0.56), -2px -2px 2px rgba(255, 255, 255, 0.08) inset, 2px 2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(150deg, #333, #111);
+}
+.plaq:nth-child(25) {
+  box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.08), 4px 4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 255, 255, 0.08) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(330deg, #333, #111);
+}
+.plaq:nth-child(26) {
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.08), 0 0 0 rgba(0, 0, 0, 0.56), -4px -4px 4px rgba(255, 255, 255, 0.08) inset, 4px 4px 4px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(330deg, #333, #111);
+}
+.plaq:nth-child(27) {
+  box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.08), -4px -4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 255, 255, 0.08) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(330deg, #333, #111);
+}
+.plaq:nth-child(28) {
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.08), 0 0 0 rgba(0, 0, 0, 0.56), 4px 4px 4px rgba(255, 255, 255, 0.08) inset, -4px -4px 4px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(330deg, #333, #111);
+}
+.plaq:nth-child(29) {
+  box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.08), -2px -2px 2px rgba(0, 0, 0, 0.56), 2px 2px 2px rgba(255, 255, 255, 0.08) inset, -2px -2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(330deg, #333, #111);
+}
+.plaq:nth-child(30) {
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.08), 2px 2px 2px rgba(0, 0, 0, 0.56), 2px 2px 2px rgba(255, 255, 255, 0.08) inset, -2px -2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 0 solid rgba(0, 0, 0, 0);
+  background: linear-gradient(330deg, #333, #111);
+}
+.plaq:nth-child(31) {
+  box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.08), -2px -2px 2px rgba(0, 0, 0, 0.56), -2px -2px 2px rgba(255, 255, 255, 0.08) inset, 2px 2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 0 solid rgba(0, 0, 0, 0);
+  background: linear-gradient(330deg, #333, #111);
+}
+.plaq:nth-child(32) {
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.08), 2px 2px 2px rgba(0, 0, 0, 0.56), -2px -2px 2px rgba(255, 255, 255, 0.08) inset, 2px 2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(330deg, #333, #111);
+}
+.plaq:nth-child(37) {
+  box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.08), 4px 4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 255, 255, 0.08) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(#333, #111 200%);
+}
+.plaq:nth-child(38) {
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.08), 0 0 0 rgba(0, 0, 0, 0.56), -4px -4px 4px rgba(255, 255, 255, 0.08) inset, 4px 4px 4px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(#333, #111 200%);
+}
+.plaq:nth-child(39) {
+  box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.08), -4px -4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 255, 255, 0.08) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(#333, #111 200%);
+}
+.plaq:nth-child(40) {
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.08), 0 0 0 rgba(0, 0, 0, 0.56), 4px 4px 4px rgba(255, 255, 255, 0.08) inset, -4px -4px 4px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(#333, #111 200%);
+}
+.plaq:nth-child(41) {
+  box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.08), -2px -2px 2px rgba(0, 0, 0, 0.56), 2px 2px 2px rgba(255, 255, 255, 0.08) inset, -2px -2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(#333, #111 200%);
+}
+.plaq:nth-child(42) {
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.08), 2px 2px 2px rgba(0, 0, 0, 0.56), 2px 2px 2px rgba(255, 255, 255, 0.08) inset, -2px -2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 0 solid rgba(0, 0, 0, 0);
+  background: radial-gradient(#333, #111 200%);
+}
+.plaq:nth-child(43) {
+  box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.08), -2px -2px 2px rgba(0, 0, 0, 0.56), -2px -2px 2px rgba(255, 255, 255, 0.08) inset, 2px 2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 0 solid rgba(0, 0, 0, 0);
+  background: radial-gradient(#333, #111 200%);
+}
+.plaq:nth-child(44) {
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.08), 2px 2px 2px rgba(0, 0, 0, 0.56), -2px -2px 2px rgba(255, 255, 255, 0.08) inset, 2px 2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(#333, #111 200%);
+}
+.plaq:nth-child(49) {
+  box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.08), 4px 4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 255, 255, 0.08) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(#111, #333 200%);
+}
+.plaq:nth-child(50) {
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.08), 0 0 0 rgba(0, 0, 0, 0.56), -4px -4px 4px rgba(255, 255, 255, 0.08) inset, 4px 4px 4px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(#111, #333 200%);
+}
+.plaq:nth-child(51) {
+  box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.08), -4px -4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 255, 255, 0.08) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(#111, #333 200%);
+}
+.plaq:nth-child(52) {
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.08), 0 0 0 rgba(0, 0, 0, 0.56), 4px 4px 4px rgba(255, 255, 255, 0.08) inset, -4px -4px 4px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(#111, #333 200%);
+}
+.plaq:nth-child(53) {
+  box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.08), -2px -2px 2px rgba(0, 0, 0, 0.56), 2px 2px 2px rgba(255, 255, 255, 0.08) inset, -2px -2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(#111, #333 200%);
+}
+.plaq:nth-child(54) {
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.08), 2px 2px 2px rgba(0, 0, 0, 0.56), 2px 2px 2px rgba(255, 255, 255, 0.08) inset, -2px -2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 0 solid rgba(0, 0, 0, 0);
+  background: radial-gradient(#111, #333 200%);
+}
+.plaq:nth-child(55) {
+  box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.08), -2px -2px 2px rgba(0, 0, 0, 0.56), -2px -2px 2px rgba(255, 255, 255, 0.08) inset, 2px 2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 0 solid rgba(0, 0, 0, 0);
+  background: radial-gradient(#111, #333 200%);
+}
+.plaq:nth-child(56) {
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.08), 2px 2px 2px rgba(0, 0, 0, 0.56), -2px -2px 2px rgba(255, 255, 255, 0.08) inset, 2px 2px 2px rgba(0, 0, 0, 0.56) inset;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(#111, #333 200%);
 }
 
 nav {
@@ -38,7 +227,7 @@ nav {
 
 .btn {
   border-radius: 8px;
-  box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.04), 4px 4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 255, 255, 0.04) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
+  box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.08), 4px 4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 255, 255, 0.08) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
   border: 1px solid rgba(0, 0, 0, 0.08);
   display: inline-block;
   padding: 10px;
@@ -54,10 +243,6 @@ nav {
 }
 .btn:hover, .btn.hover {
   border: solid 1px rgba(255, 255, 255, 0.56);
-}
-.btn:active, .btn.active {
-  box-shadow: 0 0 0 rgba(255, 255, 255, 0.04), 0 0 0 rgba(0, 0, 0, 0.56), -4px -4px 4px rgba(255, 255, 255, 0.04) inset, 4px 4px 4px rgba(0, 0, 0, 0.56) inset;
-  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 .btn.primary {
   border-radius: 8px;
@@ -77,10 +262,6 @@ nav {
 .btn.primary:hover, .btn.primary.hover {
   border: solid 1px rgba(100, 221, 23, 0.56);
 }
-.btn.primary:active, .btn.primary.active {
-  box-shadow: 0 0 0 rgba(100, 221, 23, 0.12), 0 0 0 rgba(0, 0, 0, 0.56), -4px -4px 4px rgba(100, 221, 23, 0.12) inset, 4px 4px 4px rgba(0, 0, 0, 0.56) inset;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
 .btn.secondary {
   border-radius: 8px;
   box-shadow: -2px -2px 4px rgba(255, 64, 129, 0.12), 4px 4px 4px rgba(0, 0, 0, 0.56), 0 0 0 rgba(255, 64, 129, 0.12) inset, 0 0 0 rgba(0, 0, 0, 0.56) inset;
@@ -98,10 +279,6 @@ nav {
 }
 .btn.secondary:hover, .btn.secondary.hover {
   border: solid 1px rgba(255, 64, 129, 0.56);
-}
-.btn.secondary:active, .btn.secondary.active {
-  box-shadow: 0 0 0 rgba(255, 64, 129, 0.12), 0 0 0 rgba(0, 0, 0, 0.56), -4px -4px 4px rgba(255, 64, 129, 0.12) inset, 4px 4px 4px rgba(0, 0, 0, 0.56) inset;
-  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /*# sourceMappingURL=style.css.map */
