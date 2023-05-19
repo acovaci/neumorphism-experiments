@@ -1,0 +1,395 @@
+@use "colors";
+@use "layout";
+
+$_default_color: #fff;
+$_default_highlight: 0.08;
+
+@mixin _ex_shadow($color: $_default_color, $highlight: $_default_highlight) {
+    box-shadow: -2px -2px 4px rgba($color, $highlight),
+                4px 4px 4px rgba(0, 0, 0, 0.56),
+                0 0 0 rgba($color, $highlight) inset,
+                0 0 0 rgba(0, 0, 0, 0.56) inset;
+}
+
+@mixin _in_shadow($color: $_default_color, $highlight: $_default_highlight) {
+    box-shadow: 0 0 0 rgba($color, $highlight),
+                0 0 0 rgba(0, 0, 0, 0.56),
+                -4px -4px 4px rgba($color, $highlight) inset,
+                4px 4px 4px rgba(0, 0, 0, 0.56) inset;
+}
+
+@mixin _ex_shadow_bezel($color: $_default_color, $highlight: $_default_highlight) {
+    box-shadow: -2px -2px 4px rgba($color, $highlight),
+                4px 4px 4px rgba(0, 0, 0, 0.56),
+                -4px -4px 4px rgba($color, $highlight) inset,
+                4px 4px 4px rgba(0, 0, 0, 0.56) inset;
+}
+
+@mixin _in_shadow_bezel($color: $_default_color, $highlight: $_default_highlight) {
+    box-shadow: -2px -2px 4px rgba($color, $highlight),
+                4px 4px 4px rgba(0, 0, 0, 0.56),
+                4px 4px 4px rgba($color, $highlight) inset,
+                -4px -4px 4px rgba(0, 0, 0, 0.56) inset;
+}
+
+@mixin shadow($type: ex, $bezel: false, $color: $_default_color, $highlight: $_default_highlight) {
+    @if $type == ex {
+        @if $bezel {
+            @include _ex_shadow_bezel($color, $highlight)
+        } @else {
+            @include _ex_shadow($color, $highlight)
+        }
+    } @else {
+        @if $bezel {
+            @include _in_shadow_bezel($color, $highlight)
+        } @else {
+            @include _in_shadow($color, $highlight)
+        }
+    }
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+@mixin button($color: $_default_color, $highlight: $_default_highlight) {
+    @include layout.rounded(8px);
+    @include shadow(ex, false, $color, $highlight);
+
+    display: inline-block;
+    padding: 10px;
+    color: rgba($color, 0.84);
+
+    font-weight: 600;
+    font-family: "Helvetica", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    transition: box-shadow 0.08s ease-in-out;
+    transition: border 0.16s ease-in-out;
+
+    cursor: pointer;
+
+    &:hover, &.hover {
+        border: solid 1px rgba($color, 0.56);
+    }
+
+    &:active, &.active {
+        // @include in-shadow($color, $highlight);
+    }
+}
+
+// .plaq {
+//     @include layout.rounded;
+//     @include shadow;
+
+//     &.bezel {
+//         @include shadow(ex, true);
+//     }
+
+//     &.in {
+//         @include shadow(in);
+
+//         &.bezel {
+//             @include shadow(in, true);
+//         }
+//     }
+// }
+
+@mixin shad($highlight, $shadow, $highlight_out, $highlight_in, $shadow_out, $shadow_in, $border, $border_opacity, $border_size) {
+    box-shadow: $highlight_out $highlight_out abs($highlight_out) rgba(255, 255, 255, $highlight),
+                $shadow_out $shadow_out abs($shadow_out) rgba(0, 0, 0, $shadow),
+                $highlight_in $highlight_in abs($highlight_in) rgba(255, 255, 255, $highlight) inset,
+                $shadow_in $shadow_in abs($shadow_in) rgba(0, 0, 0, $shadow) inset;
+    border: $border_size solid rgba($border, $border_opacity);
+}
+
+.plaq {
+    @include layout.rounded;
+
+    &:nth-child(1) {
+        @include shad(0.08, 0.56, -4px, 0, 4px, 0, #000, 0.08, 1px)
+    }
+
+    &:nth-child(2) {
+        @include shad(0.08, 0.56, 0, -4px, 0, 4px, #000, 0.08, 1px)
+    }
+
+    &:nth-child(3) {
+        @include shad(0.08, 0.56, 4px, 0, -4px, 0, #000, 0.08, 1px)
+    }
+
+    &:nth-child(4) {
+        @include shad(0.08, 0.56, 0, 4px, 0, -4px, #000, 0.08, 1px)
+    }
+
+    &:nth-child(5) {
+        @include shad(0.08, 0.56, 2px, 2px, -2px, -2px, #000, 0.08, 1px)
+    }
+
+    &:nth-child(6) {
+        @include shad(0.08, 0.56, -2px, 2px, 2px, -2px, #000, 0, 0)
+    }
+
+    &:nth-child(7) {
+        @include shad(0.08, 0.56, 2px, -2px, -2px, 2px, #000, 0, 0)
+    }
+
+    &:nth-child(8) {
+        @include shad(0.08, 0.56, -2px, -2px, 2px, 2px, #000, 0.08, 1px)
+    }
+
+    // &:nth-child(9) {
+    //     @include shad(0.08, 0.56, 4px, 4px, -4px, -4px, #000, 0.08, 1px)
+    // }
+
+    // &:nth-child(10) {
+    //     @include shad(0.08, 0.56, -4px, 4px, 4px, -4px, #000, 0, 0)
+    // }
+
+    // &:nth-child(11) {
+    //     @include shad(0.08, 0.56, 4px, -4px, -4px, 4px, #000, 0, 0)
+    // }
+
+    // &:nth-child(12) {
+    //     @include shad(0.08, 0.56, -4px, -4px, 4px, 4px, #000, 0.08, 1px)
+    // }
+
+    &:nth-child(13) {
+        @include shad(0.08, 0.56, -4px, 0, 4px, 0, #000, 0.08, 1px);
+        background: linear-gradient(150deg, #333, #111);
+    }
+
+    &:nth-child(14) {
+        @include shad(0.08, 0.56, 0, -4px, 0, 4px, #000, 0.08, 1px);
+        background: linear-gradient(150deg, #333, #111);
+    }
+
+    &:nth-child(15) {
+        @include shad(0.08, 0.56, 4px, 0, -4px, 0, #000, 0.08, 1px);
+        background: linear-gradient(150deg, #333, #111);
+    }
+
+    &:nth-child(16) {
+        @include shad(0.08, 0.56, 0, 4px, 0, -4px, #000, 0.08, 1px);
+        background: linear-gradient(150deg, #333, #111);
+    }
+
+    &:nth-child(17) {
+        @include shad(0.08, 0.56, 2px, 2px, -2px, -2px, #000, 0.08, 1px);
+        background: linear-gradient(150deg, #333, #111);
+    }
+
+    &:nth-child(18) {
+        @include shad(0.08, 0.56, -2px, 2px, 2px, -2px, #000, 0, 0);
+        background: linear-gradient(150deg, #333, #111);
+    }
+
+    &:nth-child(19) {
+        @include shad(0.08, 0.56, 2px, -2px, -2px, 2px, #000, 0, 0);
+        background: linear-gradient(150deg, #333, #111);
+    }
+
+    &:nth-child(20) {
+        @include shad(0.08, 0.56, -2px, -2px, 2px, 2px, #000, 0.08, 1px);
+        background: linear-gradient(150deg, #333, #111);
+    }
+
+    // &:nth-child(21) {
+    //     @include shad(0.08, 0.56, 4px, 4px, -4px, -4px, #000, 0.08, 1px);
+    //     background: linear-gradient(150deg, #333, #111);
+    // }
+
+    // &:nth-child(22) {
+    //     @include shad(0.08, 0.56, -4px, 4px, 4px, -4px, #000, 0, 0);
+    //     background: linear-gradient(150deg, #333, #111);
+    // }
+
+    // &:nth-child(23) {
+    //     @include shad(0.08, 0.56, 4px, -4px, -4px, 4px, #000, 0, 0);
+    //     background: linear-gradient(150deg, #333, #111);
+    // }
+
+    // &:nth-child(24) {
+    //     @include shad(0.08, 0.56, -4px, -4px, 4px, 4px, #000, 0.08, 1px);
+    //     background: linear-gradient(150deg, #333, #111);
+    // }
+
+    &:nth-child(25) {
+        @include shad(0.08, 0.56, -4px, 0, 4px, 0, #000, 0.08, 1px);
+        background: linear-gradient(330deg, #333, #111);
+    }
+
+    &:nth-child(26) {
+        @include shad(0.08, 0.56, 0, -4px, 0, 4px, #000, 0.08, 1px);
+        background: linear-gradient(330deg, #333, #111);
+    }
+
+    &:nth-child(27) {
+        @include shad(0.08, 0.56, 4px, 0, -4px, 0, #000, 0.08, 1px);
+        background: linear-gradient(330deg, #333, #111);
+    }
+
+    &:nth-child(28) {
+        @include shad(0.08, 0.56, 0, 4px, 0, -4px, #000, 0.08, 1px);
+        background: linear-gradient(330deg, #333, #111);
+    }
+
+    &:nth-child(29) {
+        @include shad(0.08, 0.56, 2px, 2px, -2px, -2px, #000, 0.08, 1px);
+        background: linear-gradient(330deg, #333, #111);
+    }
+
+    &:nth-child(30) {
+        @include shad(0.08, 0.56, -2px, 2px, 2px, -2px, #000, 0, 0);
+        background: linear-gradient(330deg, #333, #111);
+    }
+
+    &:nth-child(31) {
+        @include shad(0.08, 0.56, 2px, -2px, -2px, 2px, #000, 0, 0);
+        background: linear-gradient(330deg, #333, #111);
+    }
+
+    &:nth-child(32) {
+        @include shad(0.08, 0.56, -2px, -2px, 2px, 2px, #000, 0.08, 1px);
+        background: linear-gradient(330deg, #333, #111);
+    }
+
+    // &:nth-child(33) {
+    //     @include shad(0.08, 0.56, 4px, 4px, -4px, -4px, #000, 0.08, 1px);
+    //     background: linear-gradient(330deg, #333, #111);
+    // }
+
+    // &:nth-child(34) {
+    //     @include shad(0.08, 0.56, -4px, 4px, 4px, -4px, #000, 0, 0);
+    //     background: linear-gradient(330deg, #333, #111);
+    // }
+
+    // &:nth-child(35) {
+    //     @include shad(0.08, 0.56, 4px, -4px, -4px, 4px, #000, 0, 0);
+    //     background: linear-gradient(330deg, #333, #111);
+    // }
+
+    // &:nth-child(36) {
+    //     @include shad(0.08, 0.56, -4px, -4px, 4px, 4px, #000, 0.08, 1px);
+    //     background: linear-gradient(330deg, #333, #111);
+    // }
+
+    &:nth-child(37) {
+        @include shad(0.08, 0.56, -4px, 0, 4px, 0, #000, 0.08, 1px);
+        background: radial-gradient(#333, #111 200%);
+    }
+
+    &:nth-child(38) {
+        @include shad(0.08, 0.56, 0, -4px, 0, 4px, #000, 0.08, 1px);
+        background: radial-gradient(#333, #111 200%);
+    }
+
+    &:nth-child(39) {
+        @include shad(0.08, 0.56, 4px, 0, -4px, 0, #000, 0.08, 1px);
+        background: radial-gradient(#333, #111 200%);
+    }
+
+    &:nth-child(40) {
+        @include shad(0.08, 0.56, 0, 4px, 0, -4px, #000, 0.08, 1px);
+        background: radial-gradient(#333, #111 200%);
+    }
+
+    &:nth-child(41) {
+        @include shad(0.08, 0.56, 2px, 2px, -2px, -2px, #000, 0.08, 1px);
+        background: radial-gradient(#333, #111 200%);
+    }
+
+    &:nth-child(42) {
+        @include shad(0.08, 0.56, -2px, 2px, 2px, -2px, #000, 0, 0);
+        background: radial-gradient(#333, #111 200%);
+    }
+
+    &:nth-child(43) {
+        @include shad(0.08, 0.56, 2px, -2px, -2px, 2px, #000, 0, 0);
+        background: radial-gradient(#333, #111 200%);
+    }
+
+    &:nth-child(44) {
+        @include shad(0.08, 0.56, -2px, -2px, 2px, 2px, #000, 0.08, 1px);
+        background: radial-gradient(#333, #111 200%);
+    }
+
+    // &:nth-child(45) {
+    //     @include shad(0.08, 0.56, 4px, 4px, -4px, -4px, #000, 0.08, 1px);
+    //     background: radial-gradient(#333, #111 200%);
+    // }
+
+    // &:nth-child(46) {
+    //     @include shad(0.08, 0.56, -4px, 4px, 4px, -4px, #000, 0, 0);
+    //     background: radial-gradient(#333, #111 200%);
+    // }
+
+    // &:nth-child(47) {
+    //     @include shad(0.08, 0.56, 4px, -4px, -4px, 4px, #000, 0, 0);
+    //     background: radial-gradient(#333, #111 200%);
+    // }
+
+    // &:nth-child(48) {
+    //     @include shad(0.08, 0.56, -4px, -4px, 4px, 4px, #000, 0.08, 1px);
+    //     background: radial-gradient(#333, #111 200%);
+    // }
+
+    &:nth-child(49) {
+        @include shad(0.08, 0.56, -4px, 0, 4px, 0, #000, 0.08, 1px);
+        background: radial-gradient(#111, #333 200%);
+    }
+
+    &:nth-child(50) {
+        @include shad(0.08, 0.56, 0, -4px, 0, 4px, #000, 0.08, 1px);
+        background: radial-gradient(#111, #333 200%);
+    }
+
+    &:nth-child(51) {
+        @include shad(0.08, 0.56, 4px, 0, -4px, 0, #000, 0.08, 1px);
+        background: radial-gradient(#111, #333 200%);
+    }
+
+    &:nth-child(52) {
+        @include shad(0.08, 0.56, 0, 4px, 0, -4px, #000, 0.08, 1px);
+        background: radial-gradient(#111, #333 200%);
+    }
+
+    &:nth-child(53) {
+        @include shad(0.08, 0.56, 2px, 2px, -2px, -2px, #000, 0.08, 1px);
+        background: radial-gradient(#111, #333 200%);
+    }
+
+    &:nth-child(54) {
+        @include shad(0.08, 0.56, -2px, 2px, 2px, -2px, #000, 0, 0);
+        background: radial-gradient(#111, #333 200%);
+    }
+
+    &:nth-child(55) {
+        @include shad(0.08, 0.56, 2px, -2px, -2px, 2px, #000, 0, 0);
+        background: radial-gradient(#111, #333 200%);
+    }
+
+    &:nth-child(56) {
+        @include shad(0.08, 0.56, -2px, -2px, 2px, 2px, #000, 0.08, 1px);
+        background: radial-gradient(#111, #333 200%);
+    }
+
+    // &:nth-child(57) {
+    //     @include shad(0.08, 0.56, 4px, 4px, -4px, -4px, #000, 0.08, 1px);
+    //     background: radial-gradient(#111, #333 200%);
+    // }
+
+    // &:nth-child(58) {
+    //     @include shad(0.08, 0.56, -4px, 4px, 4px, -4px, #000, 0, 0);
+    //     background: radial-gradient(#111, #333 200%);
+    // }
+
+    // &:nth-child(59) {
+    //     @include shad(0.08, 0.56, 4px, -4px, -4px, 4px, #000, 0, 0);
+    //     background: radial-gradient(#111, #333 200%);
+    // }
+
+    // &:nth-child(60) {
+    //     @include shad(0.08, 0.56, -4px, -4px, 4px, 4px, #000, 0.08, 1px);
+    //     background: radial-gradient(#111, #333 200%);
+    // }
+}

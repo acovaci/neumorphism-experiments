@@ -1,0 +1,29 @@
+@use "colors";
+
+$_radius: 10px;
+
+@mixin rounded($radius: $_radius) {
+    border-radius: $radius;
+}
+
+* {
+    box-sizing: border-box !important;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @include colors.background;
+
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 640px;
+    margin: auto;
+    padding: 16px;
+}

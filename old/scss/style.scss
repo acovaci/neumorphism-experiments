@@ -1,0 +1,26 @@
+@use "colors";
+@use "layout";
+@use "card";
+
+nav {
+    @include card.shadow;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+}
+
+.btn {
+    @include card.button;
+
+    margin: 16px;
+
+    &.primary {
+        @include card.button(#64dd17, 0.12);
+    }
+
+    &.secondary {
+        @include card.button(#ff4081, 0.12);
+    }
+}
