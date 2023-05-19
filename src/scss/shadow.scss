@@ -1,0 +1,66 @@
+@layer demo.inline, demo.shadow;
+
+* {
+  box-sizing: border-box;
+}
+
+@layer demo.shadow {
+  html {
+    --light-source-angle: 0;
+    --light-source-height: 0;
+    --light-source-size: 0;
+    --light-source-color: transparent;
+    
+    --object-surface-height: 0;
+    --object-surface-color: transparent;
+    --object-side-color: var(--object-surface-color);
+    
+    --backdrop-surface-color: transparent;
+    
+    // Interpolate in CSS once we have Relative Color Syntax
+    --highlight-color: transparent;
+    --drop-shadow-color: transparent;
+    
+    --highlight-properties: var(--object-surface-height) var(--object-surface-height) calc(var(--object-surface-height) * 2) var(--object-surface-height) var(--highlight-color);
+    --drop-shadow-properties: calc(var(--object-surface-height) * -1) calc(var(--object-surface-height) * -1) calc(var(--object-surface-height) * 2) var(--object-surface-height) var(--drop-shadow-color);
+  }
+  
+  .shadow > * {
+    position: relative;
+    background-color: var(--object-surface-color);
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            200% -100%,
+            -100% -100%,
+            -100% 200%,
+            0 100%
+        );
+        box-shadow: var(--highlight-properties);
+        transform: translateZ(-1px);
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            200% 100%,
+            200% 200%,
+            100% 200%,
+            0 100%
+        );
+        box-shadow: var(--drop-shadow-properties);
+        transform: translateZ(-1px);
+    }
+  }
+}

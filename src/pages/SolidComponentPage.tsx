@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Box } from "../components/Box";
 import { Page } from "../components/Page";
-import { solidSharpShadow } from "../style/Surface/Solid";
+import { Shadow } from "../components/Shadow";
 
 let Wrapper = styled.div`
     display: flex;
@@ -16,7 +16,13 @@ export const SolidComponentPage = () => (
 
         <Wrapper>
             {Array.from({ length: 10 }).map((_, i) => (
-                <Box as={solidSharpShadow(Box, i + 1)} key={i} />
+                <Shadow
+                    surfaceHeight={`${i}px`}
+                    highlightColor="white"
+                    dropShadowColor="black"
+                >
+                    <Box key={i} />
+                </Shadow>
             ))}
         </Wrapper>
     </Page>
